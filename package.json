@@ -4,15 +4,22 @@
   "description": "heroku server for comics app",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "client-install": "cd client && npm install",
     "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "author": "Lilian Shi",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",
+    "concurrently": "^6.2.0",
     "cors": "^2.8.5",
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
   }
 }

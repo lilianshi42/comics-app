@@ -19,8 +19,6 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.use(express.static(path.join(__dirname, "client/public/index.html")));
-
 // Production mode
 if (process.env.NODE_ENV === "production") {
   // Serve any static files
