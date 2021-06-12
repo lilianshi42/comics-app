@@ -28,6 +28,6 @@ app.get("/api/:num", cors(), (req, res) => {
   DataService(url, res);
 });
 
-const port = 5000;
+const port = process.env.PORT || 5000;
 // Start server
 app.listen(port, () => `Server running on port ${port}`);
