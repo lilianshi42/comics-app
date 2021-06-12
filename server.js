@@ -1,10 +1,10 @@
 const express = require("express");
-const cors = require("cors");
+//const cors = require("cors");
 const app = express();
 const path = require("path");
 const DataService = require("./data-service");
 
-app.use(cors());
+//app.use(cors());
 
 // Add support for incoming JSON entities
 app.use(express.json());
@@ -30,12 +30,12 @@ if (process.env.NODE_ENV === "production") {
 }
 
 
-app.get("/api", cors(), (req, res) => {
+app.get("/api",  (req, res) => {
   const url = "https://xkcd.com/info.0.json";
   DataService(url, res);
 });
 
-app.get("/api/:num", cors(), (req, res) => {
+app.get("/api/:num", (req, res) => {
   const url = `https://xkcd.com/${req.params.num}/info.0.json`;
   DataService(url, res);
 });
