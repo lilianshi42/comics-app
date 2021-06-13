@@ -43,7 +43,7 @@ function Comic() {
   const getImage = async (num) => {
     try {
       await axios
-        .get(`/api/${num}`)
+        .get(`/api/comic/${num}`)
         .then((res) => res.data)
         .then((obj) => {
           setCurrentState(obj);
@@ -89,7 +89,7 @@ function Comic() {
 
   useEffect(() => {
     axios
-      .get("/api")
+      .get("/api/comic")
       .then((res) => res.data)
       .then((obj) => {
         setCurrentState(obj);
