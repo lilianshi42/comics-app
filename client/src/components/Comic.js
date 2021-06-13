@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import moment from "moment";
+import Transcript from "./Transcript";
 import { Form, InputNumber, Image, Button, Row, Col, message } from "antd";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import "antd/dist/antd.css";
@@ -15,14 +16,6 @@ function Comic() {
   const [viewCount, setViewCount] = useState(1);
   //This is the max number of comics, will be assigned from current comic when component first mount
   const [maxNum, setMaxNum] = useState(1);
-
-  // clean transcript string
-  // const cleanText = (transcript) => {
-  //   //console.log(transcript.toString());
-  //   var str = transcript.toString();
-  //   console.log(str);
-  //   return str;
-  // }
 
   // set state
   const setCurrentState = (comic) => {
@@ -101,11 +94,8 @@ function Comic() {
   return (
     <div id="comic">
       <Row>
-        <Col span={2}>
-          <LeftOutlined
-            onClick={handleBackClick}
-            style={{ fontSize: "300%" }}
-          />
+        <Col span={2} className="arrows">
+          <LeftOutlined onClick={handleBackClick} />
         </Col>
         <Col span={20}>
           <Row align="middle">
@@ -135,22 +125,25 @@ function Comic() {
           </Row>
           <Row align="middle">
             <Col span={24}>
-              <p />
-              {transcript}
+              <Transcript transcript={transcript} />
             </Col>
           </Row>
-          <Row>
-            <br />
-          </Row>
-          <Row align="middle">
+          <Row align="middle" className="formRow">
             <Col span={24}>
               <Form onSubmitCapture={handleSubmit}>
                 <Form.Item>
                   <InputNumber
-                    style={{ width: "20%" }}
-                    placeholder="Enter Comic Number"
+                    style={{ borderColor: "salmon", minWidth: "20%" }}
+                    placeholder="Enter Number"
                   />
-                  <Button type="primary" htmlType="submit">
+                  <Button
+                    style={{
+                      color: "white",
+                      backgroundColor: "salmon",
+                      borderColor: "salmon",
+                    }}
+                    htmlType="submit"
+                  >
                     Search
                   </Button>
                 </Form.Item>
@@ -158,11 +151,8 @@ function Comic() {
             </Col>
           </Row>
         </Col>
-        <Col span={2} align="middle">
-          <RightOutlined
-            onClick={handleForwardClick}
-            style={{ fontSize: "300%" }}
-          />
+        <Col span={2} className="arrows">
+          <RightOutlined onClick={handleForwardClick} />
         </Col>
       </Row>
     </div>
