@@ -2,7 +2,7 @@
 
 This application is designed for Cyber City Comics store which is aiming at a transformation from offline mode to online. It is delivered by the React frontend and the Node Express backend to realize the functionality.
 
-Key Words: React, Node
+Key Words: React.js, Node.js, Express.js
 
 Heroku App: https://sleepy-wave-18180.herokuapp.com/
 ## Objective
@@ -35,7 +35,7 @@ Bonus:
 
 ## Quick Start
 
-```JavaScript
+```bash
 # Install dependencies for server
 npm install
 
