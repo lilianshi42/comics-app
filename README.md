@@ -5,6 +5,20 @@ This application is designed for Cyber City Comics store which is aiming at a tr
 Key Words: React.js, Node.js, Express.js
 
 Heroku App: https://sleepy-wave-18180.herokuapp.com/
+
+## App Interface
+![image](https://user-images.githubusercontent.com/50718765/121824235-b9c88480-cc78-11eb-8e55-63adcf1b42cc.png)
+
+![image](https://user-images.githubusercontent.com/50718765/121824231-a9180e80-cc78-11eb-80c9-8565d00e4ca0.png)
+![image](https://user-images.githubusercontent.com/50718765/121824224-90a7f400-cc78-11eb-9971-a3ddd653890e.png)
+
+
+## Note For Chrome 
+Viewing the heroku link via Chrome might need to disable below settings to avoid DevTools failed to load source map. 
+![image](https://user-images.githubusercontent.com/50718765/121824126-cd272000-cc77-11eb-8cb8-e0e050323a32.png)
+
+Or switch to Firefox/Opera 
+
 ## Objective
 Create a web server hosted on Heroku that serves web pages that display xkcd web comic strips.
 
